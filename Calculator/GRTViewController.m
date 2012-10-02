@@ -9,6 +9,8 @@
 #import "GRTViewController.h"
 
 @interface GRTViewController ()
+- (IBAction)displayText:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *display;
 
 @end
 
@@ -26,4 +28,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)displayText:(id)sender {
+    UIButton* button = (UIButton*) sender;
+    [_display setText:button.currentTitle];
+}
 @end

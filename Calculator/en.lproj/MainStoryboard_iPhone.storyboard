@@ -21,6 +21,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayText:" destination="2" eventType="touchUpInside" id="Y0a-eG-uc0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nas-nW-Eut">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -31,6 +34,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayText:" destination="2" eventType="touchUpInside" id="Jh1-gD-o87"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Q9-w1-DE7">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -41,6 +47,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayText:" destination="2" eventType="touchUpInside" id="STa-Jp-5Kk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="au0-gl-EY8">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -51,6 +60,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayText:" destination="2" eventType="touchUpInside" id="EWC-MB-zJS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKC-ey-oHp">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -61,6 +73,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayText:" destination="2" eventType="touchUpInside" id="R0z-Gu-TS8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnd-00-bi7">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -71,6 +86,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayText:" destination="2" eventType="touchUpInside" id="cej-67-mFy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rB6-QJ-XIX">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -81,6 +99,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayText:" destination="2" eventType="touchUpInside" id="Z8p-5x-cpo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0d-Nh-tog">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -91,6 +112,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayText:" destination="2" eventType="touchUpInside" id="YHO-Aq-HJm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwe-DL-Y7z">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -101,6 +125,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayText:" destination="2" eventType="touchUpInside" id="vER-tz-Y7I"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kP-j8-uOd">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -111,6 +138,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayText:" destination="2" eventType="touchUpInside" id="6Lg-J5-UK6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTq-M5-Beh">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -121,6 +151,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayText:" destination="2" eventType="touchUpInside" id="CRh-Yi-YRa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDo-2R-rOz">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -131,6 +164,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayText:" destination="2" eventType="touchUpInside" id="1ZD-GN-8Qa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J68-pt-WX9">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -141,6 +177,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayText:" destination="2" eventType="touchUpInside" id="Gfb-k6-irl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDc-6I-lJD">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -151,6 +190,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayText:" destination="2" eventType="touchUpInside" id="xkf-eJ-8ZZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B35-kS-8UG">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -181,6 +223,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayText:" destination="2" eventType="touchUpInside" id="KQH-7W-Ze8"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JzX-AQ-U4D">
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -232,6 +277,9 @@
                             <constraint firstAttribute="bottom" secondItem="au0-gl-EY8" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="xdr-BM-SuK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="display" destination="JzX-AQ-U4D" id="Hzc-MT-L7g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -240,6 +288,10 @@
     <classes>
         <class className="GRTViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GRTViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="displayText:"/>
+                <relationship kind="outlet" name="display" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
