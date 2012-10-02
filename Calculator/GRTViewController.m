@@ -30,6 +30,6 @@
 
 - (IBAction)displayText:(id)sender {
     UIButton* button = (UIButton*) sender;
-    [_display setText:button.currentTitle];
+    [_display setText: [NSString stringWithFormat:@"%@%@", _display.text, button.currentTitle]];
 }
 @end
