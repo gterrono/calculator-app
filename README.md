@@ -5,9 +5,9 @@ It allows multiplication, division, subraction and addition of numbers.
 
 Some Things to Note
 -------------------
-* Numbers < 1 and > 0 are need to start with a "0."
+* Numbers < 1 and > 0 need to start with a "0."
 * The app dynamically disables buttons that would cause invalid input
-* App needs to be run on the 4" Retina iPhone for the ui to look right
+* App needs to be run on the 4" Retina iPhone for the UI to look right
 
 Extra Credit
 ------------
