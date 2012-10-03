@@ -14,8 +14,3 @@ Extra Credit
 * Backspace is implemented
 * The whole expression is shown on the screen
 * Disabling of buttons?
-
-To Do
------
-* Implement a way to deal with input that is too long
-* Negative numbers
