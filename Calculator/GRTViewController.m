@@ -20,6 +20,7 @@
 - (double)getDouble:(NSString *)s;
 - (double)evaluateHelper:(int)index soFar:(double)soFar;
 - (void)clearDisplay;
+- (void)setText:(NSString *)text;
 @property (weak, nonatomic) IBOutlet UIButton *point;
 @property (weak, nonatomic) IBOutlet UIButton *equals;
 @property (weak, nonatomic) IBOutlet UIButton *minus;
@@ -28,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *times;
 @property (weak, nonatomic) IBOutlet UILabel *display;
 @property (strong, nonatomic) NSMutableArray *repr;
+@property (strong, nonatomic) NSString *displayText;
 @property (nonatomic) BOOL justPressedEquals;
 @end
 
@@ -57,7 +59,7 @@
         text = [NSString stringWithFormat:@"%g", result];
         [_repr addObject:text];
     }
-    _display.text = text;
+    [self setText:text];
     _justPressedEquals = YES;
     [self disableInvalidButtons];
 }
@@ -106,8 +108,8 @@
 
 //The handler for the backspace button
 - (IBAction)backspace:(id)sender {
-    if(_display.text.length > 1) {
-        _display.text = [_display.text substringToIndex:_display.text.length - 1];
+    if(_displayText.length > 1) {
+        [self setText:[_displayText substringToIndex:_displayText.length - 1]];
         
         //Determining whether to remove the last digit of a number in repr
         //or to remove the whole element
@@ -132,7 +134,7 @@
 
 //Helper function that resets the display, the representation, and the buttons
 - (void)clearDisplay {
-    _display.text = @"";
+    [self setText:@""];
     [_repr removeAllObjects];
     [self disableInvalidButtons];
 }
@@ -144,7 +146,7 @@
     if(_repr.count == 0 || _justPressedEquals) {
         [_repr removeAllObjects];
         [_repr addObject:title];
-        _display.text = title;
+        [self setText:title];
         _justPressedEquals = NO;
     }
     else {
@@ -157,7 +159,7 @@
             _repr[_repr.count - 1] = [prev stringByAppendingString:title];
         else
             [_repr addObject:title];
-        _display.text = [_display.text stringByAppendingString: title];
+        [self setText:[_displayText stringByAppendingString: title]];
     }
     [self disableInvalidButtons];
 }
@@ -166,7 +168,7 @@
 - (IBAction)addOperator:(id)sender {
     NSString *title = ((UIButton *)sender).currentTitle;
     [_repr addObject:title];
-    _display.text = [_display.text stringByAppendingString: title];
+    [self setText:[_displayText stringByAppendingString: title]];
     [self disableInvalidButtons];
     _justPressedEquals = NO;
 }
@@ -219,5 +221,14 @@
         b.enabled = YES;
         [b setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
     }
+}
+
+//Helper to set the display text while avoiding overflow
+- (void)setText:(NSString *)text {
+    _displayText = text;
+    if (text.length > 26)
+        _display.text = [text substringFromIndex:text.length - 26];
+    else
+        _display.text = text;
 }
 @end
