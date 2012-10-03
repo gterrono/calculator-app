@@ -219,7 +219,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="clearDisplay:" destination="2" eventType="touchUpInside" id="hR4-3k-dDL"/>
+                                    <action selector="clear:" destination="2" eventType="touchUpInside" id="iYS-kx-G6P"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EwD-d7-HHW">
