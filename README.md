@@ -19,3 +19,9 @@ Extra Credit
 * Backspace is implemented
 * The whole expression is shown on the screen
 * Disabling of buttons?
+
+Sources Used for Reference
+--------------------------
+* developer.apple.com
+* The occasional stack overflow about how to do something in Objective C that I know how to do in other languages
+* Quite a few articles were used to figure out how to do a regex in Objective C
