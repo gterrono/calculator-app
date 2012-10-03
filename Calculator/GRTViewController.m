@@ -12,7 +12,7 @@
 - (IBAction)backspace:(id)sender;
 - (IBAction)clearDisplay:(id)sender;
 - (IBAction)displayText:(id)sender;
-- (void)disableInvalidButtons:(char)lastChar;
+- (void)disableInvalidButtons;
 - (void)disableButtons:(NSArray *)buttons;
 - (void)enableButtons:(NSArray *)buttons;
 @property (weak, nonatomic) IBOutlet UIButton *point;
@@ -42,27 +42,30 @@
 - (IBAction)backspace:(id)sender {	
     if(_display.text.length > 1) {
         _display.text = [_display.text substringToIndex:_display.text.length - 1];
-        [self disableInvalidButtons:[_display.text characterAtIndex:_display.text.length - 1]];
+        [self disableInvalidButtons];
     } else {
         _display.text = @"";
+        [self enableButtons:[NSArray arrayWithObjects:_point, _minus, nil]];
         [self disableButtons: [NSArray arrayWithObjects: _equals, _plus, _dividedBy, _times, nil]];
     }
 }
 
 - (IBAction)clearDisplay:(id)sender {
     _display.text = @"";
+    [self enableButtons:[NSArray arrayWithObjects:_point, _minus, nil]];
     [self disableButtons: [NSArray arrayWithObjects: _equals, _plus, _dividedBy, _times, nil]];
 }
 
 - (IBAction)displayText:(id)sender {
     UIButton* button = (UIButton*) sender;
     _display.text = [_display.text stringByAppendingString: button.currentTitle];
-    [self disableInvalidButtons:[_display.text characterAtIndex:_display.text.length - 1]];
+    [self disableInvalidButtons];
 }
 
-- (void)disableInvalidButtons:(char)lastChar {
+- (void)disableInvalidButtons {
     [self enableButtons:[NSArray arrayWithObjects:_point, _equals, _minus, _plus, _dividedBy, _times, nil]];
-    switch (lastChar) {
+    NSString *text = _display.text;
+    switch ([text characterAtIndex:text.length - 1]) {
         case '.':
             [self disableButtons: [NSArray arrayWithObjects: _equals, _minus, _plus, _dividedBy, _times, nil]];
             break;
@@ -72,6 +75,14 @@
         case '/':
             [self disableButtons: [NSArray arrayWithObjects: _equals, _plus, _dividedBy, _times, nil]];
     }
+    
+    //Uses a regex to determine whether or not to disable the . button	
+    NSError *error = NULL;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\.\\d*$" options:NSRegularExpressionCaseInsensitive error:&error];
+    int numMatches = [regex numberOfMatchesInString:text options:0 range:NSMakeRange(0, text.length)];
+    NSLog(@"%i", numMatches);
+    if(numMatches > 0)
+        [self disableButtons: [NSArray arrayWithObjects: _point, nil]];
 }
 
 - (void)disableButtons:(NSArray *)buttons {
