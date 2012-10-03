@@ -9,11 +9,14 @@
 #import "GRTViewController.h"
 
 @interface GRTViewController ()
+//Button handlers
 - (IBAction)evaluate:(id)sender;
 - (IBAction)backspace:(id)sender;
 - (IBAction)clear:(id)sender;
 - (IBAction)addNumericalValue:(id)sender;
 - (IBAction)addOperator:(id)sender;
+
+//Helpers
 - (void)disableInvalidButtons;
 - (void)disableButtons:(NSArray *)buttons;
 - (void)enableButtons:(NSArray *)buttons;
@@ -21,6 +24,7 @@
 - (double)evaluateHelper:(int)index soFar:(double)soFar;
 - (void)clearDisplay;
 - (void)setText:(NSString *)text;
+
 @property (weak, nonatomic) IBOutlet UIButton *point;
 @property (weak, nonatomic) IBOutlet UIButton *equals;
 @property (weak, nonatomic) IBOutlet UIButton *minus;
@@ -139,10 +143,13 @@
     [self disableInvalidButtons];
 }
 
-//Handler for buttons 0-9 and .
+//Handler for buttons 0...9 and .
 - (IBAction)addNumericalValue:(id)sender {
     UIButton *b = (UIButton *) sender;
     NSString *title = b.currentTitle;
+    
+    //If a number is pressed directly after equals, clear the display
+    //and start over
     if(_repr.count == 0 || _justPressedEquals) {
         [_repr removeAllObjects];
         [_repr addObject:title];
@@ -226,6 +233,9 @@
 //Helper to set the display text while avoiding overflow
 - (void)setText:(NSString *)text {
     _displayText = text;
+    
+    //26 is the max number of large characters in the label before ... appears,
+    //unfortunately this does not acount for different character sizes
     if (text.length > 26)
         _display.text = [text substringFromIndex:text.length - 26];
     else
