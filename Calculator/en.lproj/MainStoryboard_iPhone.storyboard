@@ -203,6 +203,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="clearDisplay:" destination="2" eventType="touchUpInside" id="hR4-3k-dDL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EwD-d7-HHW">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -235,10 +238,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ewe-LL-kEn">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Backspace">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backspace:" destination="2" eventType="touchUpInside" id="dfH-JR-Jnj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gDo-2R-rOz" firstAttribute="centerX" secondItem="rB6-QJ-XIX" secondAttribute="centerX" type="default" id="0lT-Pe-tT9"/>
+                            <constraint firstItem="Ewe-LL-kEn" firstAttribute="leading" secondItem="FX4-ZG-gIW" secondAttribute="leading" type="default" id="2JJ-x0-ajD"/>
                             <constraint firstItem="FX4-ZG-gIW" firstAttribute="baseline" secondItem="EwD-d7-HHW" secondAttribute="baseline" type="default" id="2gF-hW-ZMB"/>
                             <constraint firstItem="B35-kS-8UG" firstAttribute="centerX" secondItem="5kP-j8-uOd" secondAttribute="centerX" type="default" id="426-KA-1bL"/>
                             <constraint firstItem="hDc-6I-lJD" firstAttribute="leading" secondItem="zwe-DL-Y7z" secondAttribute="leading" type="default" id="7dC-gS-iUn"/>
@@ -275,6 +292,7 @@
                             <constraint firstItem="gDo-2R-rOz" firstAttribute="baseline" secondItem="PTq-M5-Beh" secondAttribute="baseline" type="default" id="wRe-RC-eb7"/>
                             <constraint firstItem="gKC-ey-oHp" firstAttribute="top" secondItem="5kP-j8-uOd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="xWL-RQ-Xtm"/>
                             <constraint firstAttribute="bottom" secondItem="au0-gl-EY8" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="xdr-BM-SuK"/>
+                            <constraint firstAttribute="bottom" secondItem="Ewe-LL-kEn" secondAttribute="bottom" constant="230" id="yLS-ND-ygG"/>
                         </constraints>
                     </view>
                     <connections>
@@ -289,6 +307,8 @@
         <class className="GRTViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GRTViewController.h"/>
             <relationships>
+                <relationship kind="action" name="backspace:"/>
+                <relationship kind="action" name="clearDisplay:"/>
                 <relationship kind="action" name="displayText:"/>
                 <relationship kind="outlet" name="display" candidateClass="UILabel"/>
             </relationships>

@@ -9,6 +9,8 @@
 #import "GRTViewController.h"
 
 @interface GRTViewController ()
+- (IBAction)backspace:(id)sender;
+- (IBAction)clearDisplay:(id)sender;
 - (IBAction)displayText:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *display;
 
@@ -28,8 +30,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)backspace:(id)sender {
+    
+}
+
+- (IBAction)clearDisplay:(id)sender {
+    [_display setText: @""];
+}
+
 - (IBAction)displayText:(id)sender {
     UIButton* button = (UIButton*) sender;
-    [_display setText: [NSString stringWithFormat:@"%@%@", _display.text, button.currentTitle]];
+    [_display setText: [_display.text stringByAppendingString: button.currentTitle]];
 }
 @end
