@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *times;
 @property (weak, nonatomic) IBOutlet UILabel *display;
 @property (strong, nonatomic) NSMutableArray *repr;
+@property (nonatomic) BOOL justPressedEquals;
 @end
 
 @implementation GRTViewController
@@ -48,10 +49,17 @@
 //The handler for the = button
 - (IBAction)evaluate:(id)sender {
     double result = [self evaluateHelper:1 soFar:[self getDouble:_repr[0]]];
-    NSString *text = [NSString stringWithFormat:@"%g", result];
-    _display.text = text;
+    NSString *text;
     [_repr removeAllObjects];
-    [_repr addObject:text];
+    if(result == -HUGE_VAL)
+        text = @"Error: Division by 0";
+    else {
+        text = [NSString stringWithFormat:@"%g", result];
+        [_repr addObject:text];
+    }
+    _display.text = text;
+    _justPressedEquals = YES;
+    [self disableInvalidButtons];
 }
 
 //Recursive function that does most of the work for evaluating an expression
@@ -80,6 +88,8 @@
             return [self evaluateHelper:index soFar:d1*d2];
             
         case '/':
+            if(d2 == 0)
+                break;
             return [self evaluateHelper:index soFar:d1/d2];
     }
     
@@ -110,11 +120,13 @@
     } else {
         [self clearDisplay];
     }
+    _justPressedEquals = NO;
 }
 
 //The handler for the clear button
 - (IBAction)clear:(id)sender {
     [self clearDisplay];
+    _justPressedEquals = NO;
 }
 
 
@@ -122,20 +134,22 @@
 - (void)clearDisplay {
     _display.text = @"";
     [_repr removeAllObjects];
-    [self disableButtons: [NSArray arrayWithObjects: _equals, _plus, _point, _minus, _dividedBy, _times, nil]];
+    [self disableInvalidButtons];
 }
 
 //Handler for buttons 0-9 and .
 - (IBAction)addNumericalValue:(id)sender {
     UIButton *b = (UIButton *) sender;
     NSString *title = b.currentTitle;
-    if(_repr.count == 0) {
+    if(_repr.count == 0 || _justPressedEquals) {
+        [_repr removeAllObjects];
         [_repr addObject:title];
         _display.text = title;
+        _justPressedEquals = NO;
     }
     else {
         double d;
-        NSString *prev = _repr[_repr.count - 1];
+        NSString *prev = [_repr lastObject];
         //If this button press is a continuation of a number,
         //append it to the other part of the number in _repr
         //Otherwise add a new element to _repr
@@ -154,18 +168,23 @@
     [_repr addObject:title];
     _display.text = [_display.text stringByAppendingString: title];
     [self disableInvalidButtons];
+    _justPressedEquals = NO;
 }
 
 //Helper that disables the correct buttons depending on the current input
 //so that the user cannot enter invalid input
 - (void)disableInvalidButtons {
-    NSString *text = _display.text;
+    if(_repr.count == 0) {
+        [self disableButtons: [NSArray arrayWithObjects: _equals, _plus, _point, _minus, _dividedBy, _times, nil]];
+        return;
+    }
+    NSString *text = [_repr lastObject];
     
     //Uses a regex to determine whether or not to disable the . button	
     NSError *error = NULL;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\.\\d*$" options:NSRegularExpressionCaseInsensitive error:&error];
     int numMatches = [regex numberOfMatchesInString:text options:0 range:NSMakeRange(0, text.length)];
-    if(numMatches > 0)
+    if(numMatches > 0 || _justPressedEquals)
         [self disableButtons: [NSArray arrayWithObject:_point]];
     else
         [self enableButtons:[NSArray arrayWithObject:_point]];
