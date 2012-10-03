@@ -73,7 +73,7 @@
 
 - (IBAction)evaluate:(id)sender {
     double result = [self processExpression:1 soFar:[self getDouble:_repr[0]]];
-    NSString *text = [NSString stringWithFormat:@"%f", result];
+    NSString *text = [NSString stringWithFormat:@"%g", result];
     _display.text = text;
     [_repr removeAllObjects];
     [_repr addObject:text];
