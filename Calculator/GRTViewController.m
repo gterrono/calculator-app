@@ -40,12 +40,18 @@
 }
 
 - (IBAction)backspace:(id)sender {	
-    if(_display.text.length > 0)
+    if(_display.text.length > 1) {
         _display.text = [_display.text substringToIndex:_display.text.length - 1];
+        [self disableInvalidButtons:[_display.text characterAtIndex:_display.text.length - 1]];
+    } else {
+        _display.text = @"";
+        [self disableButtons: [NSArray arrayWithObjects: _equals, _plus, _dividedBy, _times, nil]];
+    }
 }
 
 - (IBAction)clearDisplay:(id)sender {
     _display.text = @"";
+    [self disableButtons: [NSArray arrayWithObjects: _equals, _plus, _dividedBy, _times, nil]];
 }
 
 - (IBAction)displayText:(id)sender {
@@ -57,7 +63,13 @@
 - (void)disableInvalidButtons:(char)lastChar {
     [self enableButtons:[NSArray arrayWithObjects:_point, _equals, _minus, _plus, _dividedBy, _times, nil]];
     switch (lastChar) {
+        case '.':
+            [self disableButtons: [NSArray arrayWithObjects: _equals, _minus, _plus, _dividedBy, _times, nil]];
+            break;
         case '-':
+        case '+':
+        case '*':
+        case '/':
             [self disableButtons: [NSArray arrayWithObjects: _equals, _plus, _dividedBy, _times, nil]];
     }
 }
