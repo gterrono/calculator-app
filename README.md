@@ -17,8 +17,5 @@ Extra Credit
 
 To Do
 -----
-* Fix the layout bug that makes some buttons' labels disappear
-* Implement a div by 0 check
 * Implement a way to deal with input that is too long
-* Automatic clearing of results
 * Negative numbers
