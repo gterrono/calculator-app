@@ -18,7 +18,6 @@ Extra Credit
 ------------
 * Backspace is implemented
 * The whole expression is shown on the screen
-* Disabling of buttons?
 
 Sources Used for Reference
 --------------------------
