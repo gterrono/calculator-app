@@ -212,8 +212,8 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B35-kS-8UG">
                                 <constraints>
-                                    <constraint firstAttribute="height" priority="500" constant="67" type="user" id="CeS-7s-gMy"/>
-                                    <constraint firstAttribute="width" priority="435" constant="160" type="user" id="y6Z-SA-WPS"/>
+                                    <constraint firstAttribute="height" priority="500" constant="67" type="user" id="ZWe-nQ-wZC"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="435" constant="160" type="user" id="y6Z-SA-WPS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Clear">
@@ -255,7 +255,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ewe-LL-kEn">
                                 <constraints>
-                                    <constraint firstAttribute="width" priority="500" constant="159" type="user" id="hIi-l6-8OL"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="500" constant="159" type="user" id="hIi-l6-8OL"/>
                                     <constraint firstAttribute="height" priority="524" constant="66" type="user" id="nTd-Lq-5ej"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -400,6 +400,7 @@
                             <constraint firstItem="J68-pt-WX9" firstAttribute="leading" secondItem="hDc-6I-lJD" secondAttribute="leading" type="user" id="qpI-DU-p6q"/>
                             <constraint firstItem="EwD-d7-HHW" firstAttribute="height" secondItem="Nas-nW-Eut" secondAttribute="height" type="user" id="rPK-lC-4qO"/>
                             <constraint firstItem="ayH-da-5dD" firstAttribute="top" secondItem="3" secondAttribute="top" type="user" id="rRe-Aa-hVL"/>
+                            <constraint firstAttribute="trailing" secondItem="whl-7Z-eLD" secondAttribute="trailing" constant="6" type="user" id="rsg-zn-KRJ"/>
                             <constraint firstItem="rB6-QJ-XIX" firstAttribute="leading" secondItem="5kP-j8-uOd" secondAttribute="leading" type="user" id="s7J-k1-woZ"/>
                             <constraint firstItem="5kP-j8-uOd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="B35-kS-8UG" secondAttribute="bottom" constant="5" type="user" id="s93-Bl-EWU"/>
                             <constraint firstItem="PTq-M5-Beh" firstAttribute="top" secondItem="gDo-2R-rOz" secondAttribute="bottom" constant="2" type="user" id="sFk-rr-oua"/>
