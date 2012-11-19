@@ -12,7 +12,7 @@ Some Things to Note
 -------------------
 * Numbers < 1 and > 0 need to start with a "0."
 * The app dynamically disables buttons (shown by greying out the buttons) that would cause invalid input
-* The app needs to be run on the 4" Retina iPhone for the UI to look right
+* Is usable, although not necessarily pretty in all iPhone screens and orientations
 
 Extra Credit
 ------------
